@@ -13,3 +13,23 @@ fs.readdir(dirPath,(err,files)=>{
     });
 }
 )
+
+/*
+const fs = require('fs');
+const path = require('path');
+const dirPath2 = path.join(__dirname,"files");
+ 
+for (let index = 0; index < 5; index++) {
+    fs.writeFileSync(dirPath2+"file"+index+".txt", "text");
+    
+}
+
+fs.readdir(dirPath2, (err, files)=>{
+    files.forEach((item)=>{
+
+        console.log(item);
+    })
+
+})
+
+*/
