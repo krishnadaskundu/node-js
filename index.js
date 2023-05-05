@@ -14,3 +14,17 @@ waitingData.then((data)=>{
 })
 
 
+let c = 10;
+let d = 15;
+
+let waitingData2 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        resolve(25);
+    }, 2000);
+
+})
+
+waitingData2.then((data) => {
+ console.log(c+data) ;
+
+})
