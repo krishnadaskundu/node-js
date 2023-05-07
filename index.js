@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 
 app.get("", (req, resp) => {
@@ -15,4 +15,18 @@ app.get("/help", (req, resp) => {
 });
 
 
-app.listen(5000);
+app.listen(5000);*/
+
+const express = require('express');
+const app = express();
+
+app.get('', (req, resp) => {
+    console.log(req.query)
+    resp.send("Welcome, " + req.query.name);
+})
+
+app.get('/about', (req, resp) => {
+    resp.send("Welcome, to about page");
+})
+
+app.listen(4848);
