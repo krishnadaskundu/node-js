@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 const reqFilter = (req, resp, next) => {
     if (!req.query.age) {
@@ -21,4 +21,31 @@ app.get('/', (res, resp) => {
 app.get('/users', (res, resp) => {
     resp.send('Welcome to Users page')
 });
-app.listen(5000)
+app.listen(5000)*/
+
+const express = require("express");
+
+const app = express();
+const reqFilter =(req, resp, next) => {
+    if(!req.query.age){
+        resp.send("Please provide your age");
+    }else if(req.query.age <18 ) {
+        resp.send("You are under aged")      
+    }else{
+        next();
+    }
+}
+
+app.use(reqFilter);
+
+app.get('/', (req, resp) => {
+
+    resp.send("Home Works!");
+})
+
+app.get('/about', (req, resp) => {
+
+    resp.send("About Works!");
+})
+
+app.listen(4848);
