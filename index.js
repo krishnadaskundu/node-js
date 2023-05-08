@@ -4,7 +4,9 @@ const path = require('path');
 const app = express();
 const publicPath=path.join(__dirname,'public')
 
-app.set('view engine','ejs');
+//app.set('view engine','ejs');
+
+app.set('view engine', 'ejs');
 
 app.get('',(_,resp)=>{
     resp.sendFile(`${publicPath}/index.html`)
@@ -27,8 +29,24 @@ app.get('/help',(_,resp)=>{
     resp.sendFile(`${publicPath}/help.html`)
 });
 
+app.get('/users',(_,resp)=>{
+    const datas ={
+        name: 'Krishna',
+        email: 'k@test.com',
+        country: 'India'
+    }
+    
+    resp.render('users', {datas});
+});
+
 app.get('*',(_,resp)=>{
     resp.sendFile(`${publicPath}/nopage.html`)
 });
 
-app.listen(5000);
+
+
+app.listen(4848);
+
+
+//app.set('view engine','ejs');
+
