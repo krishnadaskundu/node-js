@@ -16,5 +16,13 @@
         <% })%>
     </ul>
 
+    <ul>
+        <% user.foods.forEach((data) => { %>
+            <li>
+                <%= data %>
+            </li>
+        <% }) %>
+    </ul>
+    <%- include('common/footer') %>
 </body>
 </html>

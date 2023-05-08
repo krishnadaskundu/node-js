@@ -15,7 +15,8 @@ app.get('/profile',(_,resp)=>{
         name:'Peter',
         email:'peter@test.com',
         country:'USA',
-        skills:['php','js','node js','java','c++']
+        skills:['php','js','node js','java','c++'],
+        foods: ['rice', 'fruits']
     }
    resp.render('profile',{user})
 });
@@ -35,4 +36,4 @@ app.get('*',(_,resp)=>{
     resp.sendFile(`${publicPath}/nopage.html`)
 });
 
-app.listen(5000);
+app.listen(4848);
