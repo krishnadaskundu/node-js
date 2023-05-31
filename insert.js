@@ -1,6 +1,6 @@
 const dbConnect = require('./mongodb');
 
-const insertData=async ()=>{
+/*const insertData=async ()=>{
    let data = await dbConnect();
   let result = await data.insert(
       [
@@ -14,6 +14,22 @@ const insertData=async ()=>{
   {
       console.warn("data is inserted")
   }
+}
+
+insertData();*/
+
+
+const insertData = async () => {
+    let data = await dbConnect();
+    let result = await data.insert([
+        {name: 'madhu', age: 40},
+        {name: 'Rohit', age: 35},
+        {name: 'Sunil', age: 35},
+    ]);
+
+    if(result.acknowledged){
+        console.log("Data is inserted");
+    }
 }
 
 insertData();

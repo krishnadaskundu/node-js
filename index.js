@@ -1,14 +1,14 @@
 const dbConnect= require('./mongodb');
 
 dbConnect().then((resp)=>{
-resp.find({name:'nord'}).toArray().then((data)=>{
+resp.find({name:'ram'}).toArray().then((data)=>{
 console.log(data)
 })
 })
 
 const main=async ()=>{
    let data = await dbConnect();
-   data = await data.find({name:'nord'}).toArray();
+   data = await data.find({name:'Ravi'}).toArray();
    console.log(data)
 }
 
