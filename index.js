@@ -1,8 +1,8 @@
 
-const dbConnect= require('./mongodb');
+/*const dbConnect= require('./mongodb');
 
 dbConnect().then((resp)=>{
-resp.find({name:'nord'}).toArray().then((data)=>{
+resp.find({name:'Ravi'}).toArray().then((data)=>{
 console.log(data)
 })
 })
@@ -13,4 +13,22 @@ const main=async ()=>{
    console.log(data)
 }
 
-main()
+main()*/ 
+
+
+const dbConnect = require('./mongodb');
+
+dbConnect().then((res) => {
+    res.find({name: 'ram'}).toArray().then((data) => {
+        console.log(data);
+    })
+});
+
+async function main()
+{
+    let data = await dbConnect();
+    data = await data.find({name: 'Ravi'}).toArray();
+    console.log(data);
+}
+
+main();
