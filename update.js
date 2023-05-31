@@ -1,4 +1,4 @@
-const dbConnect= require('./mongodb')
+/*const dbConnect= require('./mongodb')
 
 const updateData=async ()=>{
     let data = await dbConnect();
@@ -10,6 +10,22 @@ const updateData=async ()=>{
         )
     console.log(result)
 
+}
+
+updateData();
+*/
+
+const dbConnect = require('./mongodb');
+
+const  updateData = async () =>{
+    let data = await dbConnect();
+    let result = await data.update(
+        {name: 'jadu'},
+        {
+            $set:{name:'JaduH', age: 15}
+        }
+    )
+    console.log(result);
 }
 
 updateData();
