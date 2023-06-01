@@ -17,7 +17,7 @@ app.post("/", async (req, resp) => {
 
 })
 
-app.put("/:name", async (req, resp) => {
+/*app.put("/:name", async (req, resp) => {
     console.log(req.body)
     const data = await dbConnect();
     let result = data.updateOne(
@@ -25,6 +25,16 @@ app.put("/:name", async (req, resp) => {
         { $set: req.body }
     )
     resp.send({ status: "updated" })
+})*/
+
+app.put('/:name', async (req,resp)=>{
+    const data = await dbConnect();
+    let result = data.updateOne(
+        {name: req.params.name},
+        { $set: req.body}
+        )
+    resp.send({ status: "updated" })
+
 })
 
-app.listen(5000)
+app.listen(5555)
